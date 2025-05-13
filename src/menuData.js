@@ -1,0 +1,41 @@
+const menu = [
+  // makanan
+  { id: 1, name: "Ayam Bakar", price: 35000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 2, name: "Ayam Bakar + Nasi", price: 40000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 3, name: "Ikan Bakar + Nasi", price: 23000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 4, name: "Ayam Goreng Paha", price: 23000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 5, name: "Ayam Goreng Paha + Nasi", price: 28000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 6, name: "Bebek Bakar/Goreng", price: 30000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 7, name: "Bebek Bakar/Goreng + Nasi", price: 35000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 8, name: "Capcay Bakso", price: 18000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 9, name: "Kwaytiaw Ayam", price: 18000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 10, name: "Mie Goreng Ayam", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 11, name: "Mihun Goreng Ayam", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 12, name: "Nasi Goreng Ayam", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 13, name: "Nasi Goreng Hati Ayam", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 14, name: "Nasi Goreng Pattaya", price: 18000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 15, name: "Oriental Mie Bakso", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+  { id: 16, name: "Wa Tan Ho Bakso", price: 15000, image: "nasi-goreng.jpg", category: "makanan" },
+
+  // minuman
+  { id: 17, name: "Es Jeruk", price: 8000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 18, name: "Es Susu", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 19, name: "Es Teh", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 20, name: "Es Teh Lime", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 21, name: "Es White Coffee", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 22, name: "Joss Susu", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 23, name: "Jus Apel", price: 10000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 24, name: "Jus Alpukat", price: 10000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 25, name: "Jus Jeruk", price: 10000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 26, name: "Jus Nanas", price: 10000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 27, name: "Jus Wortel", price: 10000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 28, name: "Mix Jus", price: 13000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 29, name: "Teh Hangat", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 30, name: "Teh Lime Hangat", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 31, name: "Jeruk Hangat", price: 8000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 32, name: "Susu Hangat", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 33, name: "White Coffee", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+  { id: 34, name: "Kopi Hitam", price: 5000, image: "nasi-goreng.jpg", category: "minuman" },
+];
+
+export default menu;
