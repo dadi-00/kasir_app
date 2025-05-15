@@ -117,15 +117,18 @@ export default function App() {
         <div className="flex justify-between items-center">
           <span className="font-bold">Total: {formatRupiah(totalHarga)}</span>
           <div className="flex gap-2">
-            <button onClick={resetCart} className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 text-sm">
-              Reset
-            </button>
-            <button onClick={handleCheckout} className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 text-sm">
-              Checkout
-            </button>
+            {showDetails && (
+              <>
+                <button onClick={resetCart} className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 text-sm">
+                  Reset
+                </button>
+                <button onClick={handleCheckout} className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 text-sm">
+                  Checkout
+                </button>
+              </>
+            )}
             <button onClick={() => setShowDetails((v) => !v)} className="relative bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-sm">
               {showDetails ? "Tutup Detail" : "Detail"}
-
               {cart.length > 0 && <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">{hitungTotalPorsi(cart)}</span>}
             </button>
           </div>
@@ -151,31 +154,34 @@ export default function App() {
                 <ul className="space-y-2">
                   {cart.map((item) => (
                     <li key={item.id} className="border p-3 rounded-lg bg-gray-50">
+                      {/* Baris 1: Nama + kontrol jumlah (kiri), total harga (kanan) */}
                       <div className="flex justify-between items-center">
-                        <div>
-                          <h4 className="font-semibold">{item.name}</h4>
-                          <p className="text-sm text-gray-600">{formatRupiah(item.price)}</p>
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">{item.name}</span>
+                          <button onClick={() => decrementCartItem(item.id)} className="bg-gray-300 w-6 h-6 rounded hover:bg-gray-400">
+                            -
+                          </button>
+                          <input
+                            type="number"
+                            min="1"
+                            value={item.quantity}
+                            onChange={(e) => {
+                              const val = Math.max(1, Number(e.target.value));
+                              setCart((prev) => prev.map((i) => (i.id === item.id ? { ...i, quantity: val } : i)));
+                            }}
+                            className="w-10 text-center border rounded"
+                          />
+                          <button onClick={() => incrementCartItem(item.id)} className="bg-gray-300 w-6 h-6 rounded hover:bg-gray-400">
+                            +
+                          </button>
                         </div>
-                        <div className="text-right font-semibold">{formatRupiah(item.price * item.quantity)}</div>
+                        <div className="font-semibold">{formatRupiah(item.price * item.quantity)}</div>
                       </div>
-                      <div className="flex items-center mt-2 gap-2">
-                        <button onClick={() => decrementCartItem(item.id)} className="bg-gray-300 w-6 h-6 rounded hover:bg-gray-400">
-                          -
-                        </button>
-                        <input
-                          type="number"
-                          min="1"
-                          value={item.quantity}
-                          onChange={(e) => {
-                            const val = Math.max(1, Number(e.target.value));
-                            setCart((prev) => prev.map((i) => (i.id === item.id ? { ...i, quantity: val } : i)));
-                          }}
-                          className="w-12 text-center border px-2 py-1 rounded"
-                        />
-                        <button onClick={() => incrementCartItem(item.id)} className="bg-gray-300 w-6 h-6 rounded hover:bg-gray-400">
-                          +
-                        </button>
-                        <button onClick={() => removeFromCart(item.id)} className="text-red-500 text-xs ml-auto hover:underline">
+
+                      {/* Baris 2: harga per porsi (kiri), tombol hapus (kanan) */}
+                      <div className="flex justify-between items-center mt-2">
+                        <p className="text-sm text-gray-600">{formatRupiah(item.price)} / porsi</p>
+                        <button onClick={() => removeFromCart(item.id)} className="text-red-500 text-xs hover:underline">
                           Hapus
                         </button>
                       </div>
